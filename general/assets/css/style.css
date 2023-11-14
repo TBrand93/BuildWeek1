@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/bg.jpg);
+    color: white;
+}
+
+#container {
+    margin-left: 100px;
+}
+
+header img {
+width: 8%;
+margin: 40px 0px 60px 0px;
+}
+
