@@ -1,0 +1,123 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Outfit:wght@400;700;900&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/bg.jpg);
+    background-size: 100%;
+    color: white;
+}
+
+#container {
+    margin-left: 100px;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+h2 {
+    font-family: 'Outfit', sans-serif;
+    color: #D20094;
+}
+
+
+p, li, label {
+    font-family: 'Inter', sans-serif;
+    
+}
+
+header img {
+width: 8%;
+margin: 40px 0px 60px 0px;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Outfit:wght@400;700;900&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/bg.jpg);
+    background-size: 100%;
+    color: white;
+}
+
+#container {
+    margin-left: 100px;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+h2 {
+    font-family: 'Outfit', sans-serif;
+    color: #D20094;
+}
+
+
+p, li, label {
+    font-family: 'Inter', sans-serif;
+    
+}
+
+header img {
+width: 8%;
+margin: 40px 0px 60px 0px;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Stile del checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 30px; /* Regola la larghezza del checkbox */
+    cursor: pointer;
+    display: inline-block; /* Aggiunto per corretta visualizzazione del margine */
+}
+
+input[type="checkbox"] + label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px; /* Larghezza del perimetro bianco */
+    height: 15px; /* Altezza del perimetro bianco */
+    border: 1px solid #fff; /* Colore del perimetro bianco */
+    background-color: transparent; /* Sfondo trasparente */
+    box-sizing: border-box;
+}
+
+/* Stile del checkmark quando il checkbox è selezionato */
+input[type="checkbox"]:checked + label::before {
+    background-color: transparent; /* Mantieni lo sfondo trasparente quando il checkbox è selezionato */
+    border-color: white; /* Colore del perimetro del segno di spunta */
+    content: '\2713'; /* Codice Unicode del segno di spunta (checkmark) */
+    font-size: 12px; /* Dimensione del testo del segno di spunta */
+    text-align: center; /* Allineamento del testo al centro */
+    color: white; /* Colore del testo del segno di spunta */
+    display: inline-block; /* Per visualizzare correttamente il carattere */
+    line-height: 15px; /* Altezza del contenitore del carattere */
+}
+
