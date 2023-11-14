@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Outfit:wght@400;700;900&display=swap');
 
 html, body {
     margin: 0;
@@ -25,8 +25,9 @@ h2 {
 }
 
 
-p, li {
+p, li, label {
     font-family: 'Inter', sans-serif;
+    
 }
 
 header img {
@@ -34,4 +35,12 @@ width: 8%;
 margin: 40px 0px 60px 0px;
 }
 
+label {
+    font-size: 12px;
+    font-weight: 600;
+}
 
+
+#checkbox {
+    
+}
