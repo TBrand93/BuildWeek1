@@ -6,6 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-image: url(../img/bg.jpg);
+    background-size: 100%;
     color: white;
 }
 
@@ -41,6 +42,4 @@ label {
 }
 
 
-#checkbox {
-   background-color: blue; 
-}
+
