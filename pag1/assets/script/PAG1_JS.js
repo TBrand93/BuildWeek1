@@ -3,12 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var checkbox = document.getElementById("myCheckbox");
     var proceedButton = document.querySelector(".btn");
 
-    // Aggiungi un gestore di eventi per il cambio di stato del checkbox
-    checkbox.addEventListener("change", function () {
-        // Abilita/disabilita il bottone in base allo stato del checkbox
-        proceedButton.disabled = !checkbox.checked;
-    });
-
+  
     // Aggiungi un gestore di eventi per il click sul bottone
     proceedButton.addEventListener("click", function () {
         // Controlla se il checkbox è selezionato
