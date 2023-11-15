@@ -1,50 +1,7 @@
 
+/* GENERICO*/
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Outfit:wght@400;700;900&display=swap');
-
-html, body {
-    margin: 0;
-    padding: 0;
-    background-image: url(../img/bg.jpg);
-    background-size: 100%;
-    color: white;
-}
-
-#container {
-    margin-left: 100px;
-}
-
-h1 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 60px;
-    font-weight: 400;
-}
-
-h2 {
-    font-family: 'Outfit', sans-serif;
-    color: #D20094;
-}
-
-
-p, li, label {
-    font-family: 'Inter', sans-serif;
-    
-}
-
-header img {
-width: 8%;
-margin: 40px 0px 60px 0px;
-}
-
-label {
-    font-size: 12px;
-    font-weight: 600;
-}
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Outfit:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Outfit:wght@400;700;900&display=swap');
 
 html, body {
     margin: 0;
@@ -62,6 +19,8 @@ h1 {
     font-family: 'Outfit', sans-serif;
     font-size: 60px;
     font-weight: 400;
+    line-height: 50px;
+
 }
 
 h2 {
@@ -72,18 +31,64 @@ h2 {
 
 p, li, label {
     font-family: 'Inter', sans-serif;
+    font-weight: 300;
     
 }
+
+
+.btn {
+    background-color: #00ffff;
+    border: none;
+    box-shadow: 1px 1px 19px 3px #00ffff;
+    height: 42px;
+    width: 140px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    color: #0C113B;
+    margin-left: 180px;
+}
+
+
+
+
+
+
+
+
+
+
+/*MAIN PAGINA 1*/
+
 
 header img {
 width: 8%;
 margin: 40px 0px 60px 0px;
 }
 
+.homePage {
+    width: 25%;
+}
+
+#instructions p {
+width: 40%;
+}
+
+
+#instructions ul {
+    margin: 40px 0px 40px -20px ;
+}
+
+
 label {
     font-size: 12px;
     font-weight: 600;
 }
+
+
+#proceed {
+    display: inline;
+}
+
 
 /* Stile del checkbox */
 input[type="checkbox"] {
@@ -120,4 +125,3 @@ input[type="checkbox"]:checked + label::before {
     display: inline-block; /* Per visualizzare correttamente il carattere */
     line-height: 15px; /* Altezza del contenitore del carattere */
 }
-
