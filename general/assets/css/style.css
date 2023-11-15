@@ -12,7 +12,9 @@ html, body {
 }
 
 #container {
-    margin-left: 100px;
+width: 80vw;
+margin: 0 auto; /* Centra il corpo della pagina */
+  
 }
 
 h1 {
@@ -47,13 +49,6 @@ p, li, label {
     color: #0C113B;
     margin-left: 180px;
 }
-
-
-
-
-
-
-
 
 
 
@@ -127,4 +122,3 @@ input[type="checkbox"]:checked + label::before {
     display: inline-block; /* Per visualizzare correttamente il carattere */
     line-height: 15px; /* Altezza del contenitore del carattere */
 }
-
