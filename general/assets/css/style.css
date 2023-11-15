@@ -86,9 +86,11 @@ label {
 }
 
 
-#proceed {
+#proceed form, #proceed a{
     display: inline;
-    margin-top: 100px; 
+}
+#proceed {
+    margin-top: 100px;
 }
 
 
