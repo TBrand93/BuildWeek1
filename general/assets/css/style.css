@@ -171,7 +171,8 @@ input[type="checkbox"]:checked + label::before {
   border: none;
   border-bottom: 1px solid #d20094; /* Puoi personalizzare il colore della linea qui */
   outline: none;
-  padding-left: 30px; /* Rimuove il padding predefinito */
+  padding-left: 30px;
+  padding-bottom: 5px; /* Rimuove il padding predefinito */
   background-color: transparent; /* Rimuove lo sfondo predefinito */
   color: #fff;
   font-family: "Inter", sans-serif;
