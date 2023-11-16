@@ -145,3 +145,39 @@ input[type="checkbox"]:checked + label::before {
     display: inline-block; /* Per visualizzare correttamente il carattere */
     line-height: 15px; /* Altezza del contenitore del carattere */
 }
+
+
+
+
+
+
+
+
+
+
+/* MAIN PAGINA 4 */
+
+
+
+
+
+
+.rating {
+    font-size: 0;
+}
+
+.star {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.star i {
+    font-size: 50px; /* Imposta la dimensione dell'icona stella */
+    color: #1E3050; /* Colore della stella non selezionata */
+}
+
+.star.clicked i,
+.star:hover i {
+    color: #00FFFF; /* Colore della stella selezionata o evidenziata */
+}
