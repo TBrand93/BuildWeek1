@@ -12,7 +12,9 @@ html, body {
 }
 
 #container {
-    margin-left: 100px;
+    margin: 0 auto;
+    
+    width: 60vw;
 }
 
 h1 {
@@ -54,10 +56,6 @@ p, li, label {
 /*MAIN PAGINA 1*/
 
 
-header img {
-width: 14%;
-margin: 40px 0px 60px 0px;
-}
 
 .homePage {
     width: 40%;
@@ -89,7 +87,7 @@ label {
 
 
 #proceed .btn {
-    margin-left: 180px;
+    margin-left: 220px;
 }
 
 
