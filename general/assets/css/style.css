@@ -232,3 +232,64 @@ input[type="checkbox"]:checked + label::before {
   justify-content: center;
   font-size: 22px;
 }
+
+/* caselle PAGINA 3 */
+
+
+
+
+/* Modifica gli stili nel tuo file style.css */
+
+#risposte {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide il container in due colonne */
+  gap: 10px; /* Aggiunge spazi tra le caselle */
+  justify-content: center; /* Centra le caselle orizzontalmente */
+}
+
+#risposta1,
+#risposta2 {
+  margin-bottom: px; /* Aggiunge uno spazio tra le risposte A e B */
+}
+
+#risposta3 {
+  
+  margin-top: 20px; /* Aggiunge uno spazio sopra la risposta C */
+}
+
+#risposta4 {
+  margin-top: 20px; /* Aggiunge uno spazio sopra la risposta D */
+}
+
+.btnQuiz {
+  background-color: #1e3050;
+  padding: 20px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.btnQuiz:hover {
+  background-color: #d20094;
+}
+
+.btnQuiz.active {
+  background-color: #d20094;
+}
+
+.risposta-content {
+  color: #000;
+  font-weight: bold;
+}
+
+a {
+  display: block;
+  position: absolute;
+  bottom: 30px; /* Imposta la distanza dal basso */
+  left: 38%; /* Posiziona nel centro orizzontale */
+  padding: 50px;
+}
+

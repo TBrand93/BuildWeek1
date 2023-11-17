@@ -70,3 +70,25 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
+
+// CASELLE PAGINA 2
+
+
+
+document.getElementById("risposte").addEventListener("click", function (event) {
+  if (event.target.classList.contains("btnQuiz")) {
+    // Rimuovi la classe "active" da tutti gli elementi con classe "btnQuiz"
+    let btns = document.querySelectorAll(".btnQuiz");
+    btns.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    // Aggiungi la classe "active" all'elemento cliccato
+    event.target.classList.add("active");
+
+    // Recupera e stampa il contenuto della risposta cliccata
+    let rispostaContent = event.target.querySelector(".risposta-content").innerText;
+    console.log("Hai selezionato: " + rispostaContent);
+  }
+});
+
