@@ -1,7 +1,6 @@
 /*Timer*/
 
 const dashArray = 283;
-
 const timeLimit = 20;
 let timePassed = 0;
 let timeLeft = timeLimit;
@@ -53,19 +52,14 @@ function startTimer() {
 }
 
 function formatTime(time) {
-  const minutes = Math.floor(time / 60);
   let seconds = time % 60;
-
-  if (seconds < 10) {
-    seconds = `0${seconds}`;
-  }
-
-  return `${minutes}:${seconds}`;
+  return seconds;
 }
 
+
 function calculateTimeFraction() {
-  const fraction = timeLeft / timeLimit;
-  return fraction - (1 / timeLimit) * (1 - fraction);
+  const rawTimeFraction = timeLeft / timeLimit;
+  return rawTimeFraction - (1 / timeLimit) * (1 - rawTimeFraction);
 }
 
 function setCircleDasharray() {

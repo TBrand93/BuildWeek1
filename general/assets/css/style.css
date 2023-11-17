@@ -97,9 +97,9 @@ input[type="checkbox"] {
 
 input[type="checkbox"] + label {
   position: relative;
-  padding-left: 30px; /* Regola la larghezza del checkbox */
+  padding-left: 30px; 
   cursor: pointer;
-  display: inline-block; /* Aggiunto per corretta visualizzazione del margine */
+  display: inline-block; 
 }
 
 input[type="checkbox"] + label::before {
@@ -107,23 +107,23 @@ input[type="checkbox"] + label::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 15px; /* Larghezza del perimetro bianco */
-  height: 15px; /* Altezza del perimetro bianco */
-  border: 1px solid #fff; /* Colore del perimetro bianco */
-  background-color: transparent; /* Sfondo trasparente */
+  width: 15px;
+  height: 15px; 
+  border: 1px solid #fff; 
+  background-color: transparent;
   box-sizing: border-box;
 }
 
 /* Stile del checkmark quando il checkbox è selezionato */
 input[type="checkbox"]:checked + label::before {
-  background-color: transparent; /* Mantieni lo sfondo trasparente quando il checkbox è selezionato */
-  border-color: white; /* Colore del perimetro del segno di spunta */
+  background-color: transparent; 
+  border-color: white; 
   content: "\2713"; /* Codice Unicode del segno di spunta (checkmark) */
-  font-size: 12px; /* Dimensione del testo del segno di spunta */
-  text-align: center; /* Allineamento del testo al centro */
-  color: white; /* Colore del testo del segno di spunta */
-  display: inline-block; /* Per visualizzare correttamente il carattere */
-  line-height: 15px; /* Altezza del contenitore del carattere */
+  font-size: 12px; 
+  text-align: center; 
+  color: white; 
+  display: inline-block; 
+  line-height: 15px; 
 }
 
 /* MAIN */
@@ -148,13 +148,13 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .star i {
-  font-size: 40px; /* Imposta la dimensione dell'icona stella */
-  color: #1e3050; /* Colore della stella non selezionata */
+  font-size: 40px; 
+  color: #1e3050; 
 }
 
 .star.clicked i,
 .star:hover i {
-  color: #00ffff; /* Colore della stella selezionata o evidenziata */
+  color: #00ffff; 
 }
 
 .pg4 {
@@ -169,11 +169,11 @@ input[type="checkbox"]:checked + label::before {
   height: 20px;
   width: 630px;
   border: none;
-  border-bottom: 1px solid #d20094; /* Puoi personalizzare il colore della linea qui */
+  border-bottom: 1px solid #d20094;
   outline: none;
   padding-left: 30px;
-  padding-bottom: 5px; /* Rimuove il padding predefinito */
-  background-color: transparent; /* Rimuove lo sfondo predefinito */
+  padding-bottom: 5px; 
+  background-color: transparent;
   color: #fff;
   font-family: "Inter", sans-serif;
   font-weight: 300;
@@ -184,11 +184,17 @@ input[type="checkbox"]:checked + label::before {
     margin-top: 20px;
 }
 
+#timer {
+  width: 30%;
+  margin: -5rem 3rem 2rem 40rem;
+}
+
 .base-timer {
   position: relative;
   width: 100px;
   height: 100px;
-  color: black;
+  color: white;
+  font-family: "Inter", sans-serif;
 }
 
 .base-timer__svg {
@@ -201,12 +207,12 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .base-timer__path-elapsed {
-  stroke-width: 7px;
+  stroke-width: 10px;
   stroke: grey;
 }
 
 .base-timer__path-remaining {
-  stroke-width: 7px;
+  stroke-width: 10px;
   stroke-linecap: round;
   transform: rotate(90deg);
   transform-origin: center;
@@ -224,5 +230,5 @@ input[type="checkbox"]:checked + label::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 22px;
 }
