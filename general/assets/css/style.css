@@ -148,6 +148,7 @@ input[type="checkbox"]:checked + label::before {
 
 #conteggio {
   margin-top: 150px;
+  font-family: "Outfit", sans-serif;
 }
 
 .btnQuiz {
@@ -170,9 +171,49 @@ input[type="checkbox"]:checked + label::before {
 }
 
 
-#conteggio {
-  font-family: "Outfit", sans-serif;
-}
+#results h1 {
+  margin: 0;
+  }
+  #results p {
+    margin: 0px;
+  }
+  
+  
+  #percentuali {
+  margin: 40px;
+  }
+  
+  
+  .esito,#grafico {
+    color: #fff;
+    margin-left: 15px;
+    display: inline-block;
+    font-family: "Outfit", sans-serif;
+  }
+  
+  
+  .esito h2 {
+    margin: 0;
+    font-size: 30px; /* Dimensione del testo per Correct/Wrong */
+  }
+  
+  .esito p {
+    margin: 0;
+    font-size: 16px; /* Dimensione del testo per X/Y questions e percentuali */
+  }
+  
+  #grafico {
+    background-color: red;
+    height: 200px;
+    width: 200px;
+  }
+  
+  
+  #rateUs {
+  background-color: none;
+  border: 2px solid #fff;
+  box-shadow: none;
+  }
 
 
 
