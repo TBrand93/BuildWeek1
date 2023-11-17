@@ -58,6 +58,10 @@ label {
   color: #0c113b;
 }
 
+
+
+
+
 /*MAIN PAGINA 1*/
 
 .homePage {
@@ -126,7 +130,52 @@ input[type="checkbox"]:checked + label::before {
   line-height: 15px; /* Altezza del contenitore del carattere */
 }
 
-/* MAIN */
+
+
+
+
+/* MAIN PAGINA 2 */
+
+#results {
+  display: none;
+}
+
+#risposte {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#conteggio {
+  margin-top: 150px;
+}
+
+.btnQuiz {
+  background-color: #0c113b;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px 1px #00ffff;
+  height: 50px;
+  width: 180px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  color: #fff;
+  flex-basis: calc(50% - 20px);
+  margin: 10px;
+}
+
+
+.btnQuiz:hover {
+  background-color: #d20094;
+}
+
+
+#conteggio {
+  font-family: "Outfit", sans-serif;
+}
+
+
+
 
 /* MAIN PAGINA 4 */
 
