@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #edf2f4;
+  min-height: 500vh;
+}
+ .container .chart-container {
+  padding: 50px;
+}
+ .chart-container .back {
+  stroke: #D20094;
+  stroke-width: 20;
+}
+ .chart-container .front {
+  stroke: #00FFFF;
+  stroke-width: 20;
+  stroke-dasharray: 395.84;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+ .text {
+  font-size: 32px;
+}
+
+@keyframes fill {
+  to { stroke-dasharray: 0,1000000; }
+
+}
+
+
+@keyframes display {
+  to { 
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+.front {
+  animation: fill 2s reverse;
+}
+.text {
+  opacity: 0;
+  transform: translateY(30%);
+  animation: display 2s forwards;
+}
+
+body {
+  margin: 0;
+  
+}
+
