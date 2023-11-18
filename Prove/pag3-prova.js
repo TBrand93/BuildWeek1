@@ -1,5 +1,83 @@
-/* Percentuale */
+/*Timer*/
 
+const dashArray = 283;
+const timeLimit = 6;
+let timePassed = 0;
+let timeLeft = timeLimit;
+let timerInterval = null;
+
+document.getElementById("timer").innerHTML = `
+<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <path
+        id="base-timer-path-remaining"
+        stroke-dasharray="283"
+        class="base-timer__path-remaining"
+        d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "
+      ></path>
+    </g>
+  </svg>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(
+    timeLeft
+  )}</span>
+</div>
+`;
+
+// startTimer();
+
+function onTimesUp() {
+  clearInterval(timerInterval);
+}
+
+function startTimer() {
+  clearInterval(timerInterval);
+  timePassed = 0;
+ 
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = timeLimit - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(
+      timeLeft
+    );
+    setCircleDasharray();
+
+    if (timeLeft === 0) {
+      onTimesUp();
+    }
+  }, 1000);
+}
+
+function formatTime(time) {
+  let seconds = time % 60;
+  return seconds;
+}
+
+
+function calculateTimeFraction() {
+  const rawTimeFraction = timeLeft / timeLimit;
+  return rawTimeFraction - (1 / timeLimit) * (1 - rawTimeFraction);
+}
+
+function setCircleDasharray() {
+  const circleDasharray = `${(
+    calculateTimeFraction() * dashArray
+  ).toFixed(0)} 283`;
+  document
+    .getElementById("base-timer-path-remaining")
+    .setAttribute("stroke-dasharray", circleDasharray);
+}
+
+
+/* --------------- */
+
+/* ARRAY CON DOMANDE E RISPOSTE */
 const questions = [
   {
     category: "Science: Computers",
@@ -67,11 +145,7 @@ const questions = [
     question:
       "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
-    incorrect_answers: [
-      "Ice Cream Sandwich",
-      "Jelly Bean",
-      "Marshmallow",
-    ],
+    incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
   },
   {
     category: "Science: Computers",
@@ -100,45 +174,113 @@ const questions = [
   },
 ];
 
-let punteggioTotale = 3;
-// punteggioTotale = punteggioTotale + 1;
-// let questionNumber = 'numero della domanda';
+/* FUNZIONE SCALETTA */
+
+/* 
+CONTENUTO:
+ domande timer Casistica Progresso
+ */
 
 
-// if(questionNumber > questions.question){
-  //   return punteggioTotale;
-  // }
-  
-  function results(n) {
-  let sbagliate = questions.length - punteggioTotale;
-  let totaleDomande = questions.length;
-  let perCorrette = (n/totaleDomande) * 100;
-  let perSbagl =  100 - perCorrette;
+/* FUNZIONE QUIZ */
+let currentQuestionIndex = 0;
+let correctAnswers = 0;
 
-  let corrette = document.getElementById('true');
-  let sbagl = document.getElementById('false');
+const testDiv = document.getElementById("test");
+const resultsDiv = document.getElementById("results");
+const domandaElement = document.getElementById("domanda");
+const risposteElement = document.getElementById("risposte");
+const conteggioElement = document.getElementById("conteggio");
+const risultatoElement = document.getElementById("risultato");
+const esitoTrueElement = document.getElementById("True");
+const esitoFalseElement = document.getElementById("False");
+const btnQuizElements = document.querySelectorAll(".btnQuiz");
 
-  let esitoPos = document.createElement('p');
-  esitoPos.classList.add('esitiPosNeg');
-  esitoPos.innerText = `Correct ${perCorrette} %`;
 
-  let questionsCorrect = document.createElement('p');
-  questionsCorrect.classList.add('questions');
-  questionsCorrect.innerText = `${n}/${totaleDomande}`;
+/* DI SEGUITO LE FUNZIONI IN ORDINE */
 
-  corrette.appendChild(esitoPos);
-  corrette.appendChild(questionsCorrect);
-
-  let esitoNeg = document.createElement('p');
-  esitoNeg.classList.add('esitiPosNeg');
-  esitoNeg.innerText = `Wrong ${perSbagl} %`;
-
-  let questionsWrong = document.createElement('p');
-  questionsWrong.classList.add('questions');
-  questionsWrong.innerText = `${sbagliate}/${totaleDomande}`
-
-  sbagl.appendChild(esitoNeg);
-  sbagl.appendChild(questionsWrong);
+function startQuiz() {
+  currentQuestionIndex = 0;
+  correctAnswers = 0;
+  testDiv.style.display = "block";
+  resultsDiv.style.display = "none";
+  nextQuestion();
 }
 
-results(punteggioTotale)
+function nextQuestion() {
+  if (currentQuestionIndex < questions.length) {
+    const currentQuestion = questions[currentQuestionIndex];
+    displayQuestion(currentQuestion);
+   
+    startTimer();
+  } else {
+    showResults();
+  }
+}
+/* FUNZIONE TIMER */
+
+
+/* FUNZIONE Casistica */
+function displayQuestion(question) {
+  domandaElement.textContent = question.question;
+
+  const allAnswers = [...question.incorrect_answers, question.correct_answer];
+  const shuffledAnswers = shuffleArray(allAnswers);
+
+  risposteElement.innerText = '';
+
+  shuffledAnswers.forEach((answer) => {
+    const button = document.createElement('button');
+    button.classList.add('btnQuiz');
+    button.innerText = answer;
+    button.onclick = () =>
+      checkAnswer(answer === question.correct_answer);
+    risposteElement.appendChild(button);
+  });
+
+  // btnQuizElements.forEach((btn, index) => {
+  //   btn.textContent = shuffledAnswers[index];
+
+  updateConteggio();
+  
+}
+
+function checkAnswer(isCorrect) {
+  if (isCorrect) {
+    correctAnswers++;
+  }
+
+  currentQuestionIndex++;
+  nextQuestion();
+}
+
+function updateConteggio() {
+  conteggioElement.textContent = `QUESTION ${currentQuestionIndex + 1} / ${questions.length}`;
+}
+
+/* FUNZIONE PROGRESSO */
+function showResults() {
+  testDiv.style.display = "none";
+  resultsDiv.style.display = "block";
+
+  const domandeSbagliate = questions.length - correctAnswers;
+
+  // Calcola il valore percentuale
+  const percentualeCorrette = (correctAnswers / questions.length) * 100;
+  const percentualeSbagliate = (domandeSbagliate / questions.length) * 100;
+
+  // Mostra i risultati
+  esitoTrueElement.innerHTML = `<h2>Correct<br>${percentualeCorrette.toFixed(2)}%</h2><br><p>${correctAnswers}/${questions.length} questions</p>`;
+  esitoFalseElement.innerHTML = `<h2>Wrong<br>${percentualeSbagliate.toFixed(2)}%</h2><br><p>${domandeSbagliate}/${questions.length} questions</p>`;
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// Inizia il quiz quando la pagina si carica
+window.onload = startQuiz;
