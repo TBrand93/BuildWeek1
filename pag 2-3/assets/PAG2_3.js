@@ -102,7 +102,6 @@ CONTENUTO:
  domande timer Casistica Progresso
  */
 
-
 /* FUNZIONE QUIZ */
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
@@ -114,9 +113,11 @@ const risposteElement = document.getElementById("risposte");
 const conteggioElement = document.getElementById("conteggio");
 const risultatoElement = document.getElementById("risultato");
 const esitoTrueElement = document.getElementById("True");
+const esitoTestoElement = document.getElementById("descrizioneEsito");
+const graficoElement = document.getElementById("grafico");
+const progressoElement = document.getElementById("progresso");
 const esitoFalseElement = document.getElementById("False");
 const btnQuizElements = document.querySelectorAll(".btnQuiz");
-
 
 /* DI SEGUITO LE FUNZIONI IN ORDINE */
 
@@ -136,6 +137,7 @@ function nextQuestion() {
     showResults();
   }
 }
+
 /* FUNZIONE TIMER */
 
 
@@ -161,11 +163,14 @@ function checkAnswer(isCorrect) {
   }
 
   currentQuestionIndex++;
+  updateGrafico();
   nextQuestion();
 }
 
 function updateConteggio() {
-  conteggioElement.textContent = `QUESTION ${currentQuestionIndex + 1} / ${questions.length}`;
+  conteggioElement.textContent = `QUESTION ${currentQuestionIndex + 1} / ${
+    questions.length
+  }`;
 }
 
 /* FUNZIONE PROGRESSO */
@@ -180,8 +185,34 @@ function showResults() {
   const percentualeSbagliate = (domandeSbagliate / questions.length) * 100;
 
   // Mostra i risultati
-  esitoTrueElement.innerHTML = `<h2>Correct<br>${percentualeCorrette.toFixed(2)}%</h2><br><p>${correctAnswers}/${questions.length} questions</p>`;
-  esitoFalseElement.innerHTML = `<h2>Wrong<br>${percentualeSbagliate.toFixed(2)}%</h2><br><p>${domandeSbagliate}/${questions.length} questions</p>`;
+  esitoTrueElement.innerHTML = `<h2>Correct<br>${percentualeCorrette.toFixed(
+    2
+  )}%</h2><br><p>${correctAnswers}/${questions.length} questions</p>`;
+  esitoFalseElement.innerHTML = `<h2>Wrong<br>${percentualeSbagliate.toFixed(
+    2
+  )}%</h2><br><p>${domandeSbagliate}/${questions.length} questions</p>`;
+
+  // Aggiungi il testo dell'esito
+  stampaTesto(percentualeCorrette);
+
+  // Aggiungi la barra di progresso
+  updateGrafico(percentualeCorrette);
+}
+
+function stampaTesto(percentuale) {
+  if (percentuale >= 60) {
+    esitoTestoElement.innerText = "Passato";
+  } else {
+    esitoTestoElement.innerText = "Bocciato";
+  }
+}
+
+function updateGrafico(percentuale) {
+  const coloreSfondo =
+    percentuale > 100
+      ? "#00ffff"
+      : `linear-gradient(90deg, #00ffff ${percentuale}%, #d20094 ${percentuale}%)`;
+  graficoElement.style.background = coloreSfondo;
 }
 
 function shuffleArray(array) {
@@ -194,3 +225,4 @@ function shuffleArray(array) {
 
 // Inizia il quiz quando la pagina si carica
 window.onload = startQuiz;
+

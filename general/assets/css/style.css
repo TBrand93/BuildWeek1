@@ -19,7 +19,7 @@ header img {
 .main {
   text-align: center;
   margin: 0 auto;
- /* width: 34vw;*/
+  /* width: 34vw;*/
 }
 
 .container {
@@ -57,10 +57,6 @@ label {
   font-weight: 800;
   color: #0c113b;
 }
-
-
-
-
 
 /*MAIN PAGINA 1*/
 
@@ -130,10 +126,6 @@ input[type="checkbox"]:checked + label::before {
   line-height: 15px; /* Altezza del contenitore del carattere */
 }
 
-
-
-
-
 /* MAIN PAGINA 2 */
 
 #results {
@@ -165,58 +157,61 @@ input[type="checkbox"]:checked + label::before {
   margin: 10px;
 }
 
-
 .btnQuiz:hover {
   background-color: #d20094;
 }
 
-
 #results h1 {
   margin: 0;
-  }
-  #results p {
-    margin: 0px;
-  }
-  
-  
-  #percentuali {
+}
+#results p {
+  margin: 0px;
+}
+
+#percentuali {
   margin: 40px;
-  }
-  
-  
-  .esito,#grafico {
-    color: #fff;
-    margin-left: 15px;
-    display: inline-block;
-    font-family: "Outfit", sans-serif;
-  }
-  
-  
-  .esito h2 {
-    margin: 0;
-    font-size: 30px; /* Dimensione del testo per Correct/Wrong */
-  }
-  
-  .esito p {
-    margin: 0;
-    font-size: 16px; /* Dimensione del testo per X/Y questions e percentuali */
-  }
-  
-  #grafico {
-    background-color: red;
-    height: 200px;
-    width: 200px;
-  }
-  
-  
-  #rateUs {
-  background-color: none;
+}
+
+.esito,
+#barraProgresso,
+#grafico {
+  color: #fff;
+  margin-left: 15px;
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+}
+
+#barraProgresso {
+  width: 200px;
+}
+
+.esito h2 {
+  margin: 0;
+  font-size: 30px; /* Dimensione del testo per Correct/Wrong */
+}
+
+.esito p {
+  margin: 0;
+  font-size: 16px; /* Dimensione del testo per X/Y questions e percentuali */
+}
+
+#grafico {
+  width: 30%;
+  height: 20px;
+  margin-top: 10px;
+  overflow: hidden; /* Aggiunto overflow: hidden; */
+}
+
+#progresso {
+  height: 30%;
+}
+
+#rateUs {
+  background-color:transparent;
   border: 2px solid #fff;
   box-shadow: none;
-  }
-
-
-
+  color: #fff;
+}
 
 /* MAIN PAGINA 4 */
 
@@ -224,7 +219,6 @@ input[type="checkbox"]:checked + label::before {
   font-size: 40px;
   font-weight: 600;
 }
-
 
 .rating {
   font-size: 0;
@@ -253,7 +247,6 @@ input[type="checkbox"]:checked + label::before {
   margin: 0 auto;
 }
 
-
 .comment {
   margin: 30px;
   height: 20px;
@@ -269,7 +262,6 @@ input[type="checkbox"]:checked + label::before {
   font-weight: 300;
 }
 
-
 #moreInfo {
-    margin-top: 20px;
+  margin-top: 20px;
 }
