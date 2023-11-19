@@ -58,6 +58,10 @@ label {
   color: #0c113b;
 }
 
+
+
+
+
 /*MAIN PAGINA 1*/
 
 .homePage {
@@ -126,7 +130,165 @@ input[type="checkbox"]:checked + label::before {
   line-height: 15px; /* Altezza del contenitore del carattere */
 }
 
-/* MAIN */
+
+
+
+
+/* MAIN PAGINA 2 */
+
+#domanda {
+  font-size:40px ;
+}
+
+#results {
+  display: none;
+}
+
+#risposte {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+#conteggio {
+  margin-top: 150px;
+  font-family: "Outfit", sans-serif;
+}
+
+.btnQuiz {
+  background-color: rgba(43, 41, 88, 0.6);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px 1px whitesmoke;
+  height: 50px;
+  width: 180px; /**/
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  color: #fff;
+  flex-basis: calc(50% - 20px);
+  margin: 10px;
+  /*????? align center?*/
+  
+}
+
+
+.btnQuiz:hover {
+  background-color: #d20094;
+}
+
+
+
+#results h1 {
+  margin: 0;
+}
+#results p {
+  margin: 0px;
+}
+
+#percentuali {
+  margin: 40px;
+}
+
+.esito,
+#barraProgresso,
+#grafico {
+  color: #fff;
+  margin-left: 15px;
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+}
+
+#barraProgresso {
+  width: 200px;
+}
+
+.esito h2 {
+  margin: 0;
+  font-size: 30px; /* Dimensione del testo per Correct/Wrong */
+}
+
+.esito p {
+  margin: 0;
+  font-size: 16px; /* Dimensione del testo per X/Y questions e percentuali */
+}
+
+#grafico {
+  width: 30%;
+  height: 20px;
+  margin-top: 10px;
+  overflow: hidden; /* Aggiunto overflow: hidden; */
+}
+
+#progresso {
+  height: 30%;
+}
+
+#rateUs {
+  background-color:transparent;
+  border: 2px solid #fff;
+  box-shadow: none;
+  color: #fff;
+}
+
+
+
+
+/*TIMER*/
+#timer {
+  width: 30%;
+  margin: -5rem 3rem 6rem 40rem;
+
+}
+
+.base-timer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.base-timer__svg {
+  transform: scaleX(1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 10px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 10px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+  color:#00FFFF;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+
+
+
+
 
 /* MAIN PAGINA 4 */
 
@@ -183,3 +345,4 @@ input[type="checkbox"]:checked + label::before {
 #moreInfo {
     margin-top: 20px;
 }
+

@@ -15,34 +15,38 @@
         <img src="../general/assets/img/epicode_logo.png" alt="logo" />
       </header>
 
-      <main>
+      <main class="main">
       <!--       PAGINA 2   QUIZ       -->
 
         <div id="quiz">
 
-            <!-- TIMER -->
-            <div id="timer"></div>
+            
 
             <!--TEST DINAMICO-->
 
             <div id="test">
+
+              <!-- TIMER -->
+            <div id="timer"></div>
+
                 <h1 id="domanda"></h1>
 
                 <!--risposte-->
 
                 <div id="risposte">
-                    <button type="submit" class="btnQuiz"></button>
-                    <button type="submit" class="btnQuiz"></button>
-                    <button type="submit" class="btnQuiz"></button>
-                    <button type="submit" class="btnQuiz"></button>
-
+                    <!--<button type="submit" class="btnQuiz" ></button>
+                    <button type="submit" class="btnQuiz" button>
+                    <button type="submit" class="btnQuiz" class="btnFalse"></button>
+                    <button type="submit" class="btnQuiz" class="btnFalse"></button>
+                    -->
                 </div>
+                <!-- CONTEGGIO -->
+
+            <div id="conteggio"></div>
 
             </div>
 
-            <!-- CONTEGGIO -->
-
-            <div id="conteggio"></div>
+            
 
         </div>
 
@@ -51,37 +55,35 @@
 
 
       <div id="results">
+        <h1 id="risultati">Results</h1>
 
-      <h1 id="risultati"></h1>
+        <p>The Summary of your answers:</p>
 
+        <div id="percentuali">
+          <!--% RIPOSTE TRUE-->
 
-    <!--% RIPOSTE TRUE-->
+          <div class="esito" id="True"></div>
 
-      <div class="esito" id="True">
-
-      </div>
-
-
-
-        <!--GRAFICO PROGRESSIVO-->
-        <div id="grafico">
-
-            <p></p>
-
+          <div id="barraProgresso">
+          <h3 id="descrizioneEsito"></h3>
+          <!--GRAFICO PROGRESSIVO-->
+          <div id="grafico">
+            
+            <div id="progresso"></div>
+          </div>
         </div>
 
+          <!--% RIPOSTE FALSE-->
 
-    <!--% RIPOSTE FALSE-->
-
-        <div class="esito" id="False">
-        
+          <div class="esito" id="False"></div>
         </div>
-
-
         <!--BOTTONE PAG 4-->
+       <div id="recensione">
+         
 
-        <a href="../pag4/PAG4_INDEX.html"><button type="button" class="btn" id="rateUs">RATE US</button></a>
+         <a href="../pag4/PAG4_INDEX.html"><button type="button" class="btn" id="rateUs">RATE US</button></a>
 
+       </div>
         </div>
 
 
