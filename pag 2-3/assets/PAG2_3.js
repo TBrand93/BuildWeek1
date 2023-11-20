@@ -197,6 +197,8 @@ const esitoFalseElement = document.getElementById("False");
 const btnQuizElements = document.querySelectorAll(".btnQuiz");
 const progressBarFill = document.getElementById('progress');
 
+
+
 /* DI SEGUITO LE FUNZIONI IN ORDINE */
 
 function startQuiz() {
@@ -311,9 +313,67 @@ function showResults() {
 stampaTesto(percentualeCorrette);
 
 // Aggiungi la barra di progresso
-updateGrafico(percentualeCorrette);
+//updateGrafico(percentualeCorrette);
 
+
+
+
+
+/////////PIE CHART//////
+
+// Funzione per calcolare la percentuale di risposte giuste
+
+
+
+  const ctx = document.getElementById("progressChart");
+  const progressChart = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+          //labels: ["Giuste", "Sbagliate"],
+          datasets: [
+              {
+                  data: [percentualeCorrette, percentualeSbagliate],
+                  backgroundColor: ["#00FFFF", "#D20094"],
+              },
+          ],
+      },
+      options: {
+          cutoutPercentage: 80,
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+              display: false,
+          },
+          plugins: {
+              doughnutlabel: {
+                  labels: [
+                      {
+                          text:
+                              percentualeCorrette >= 60
+                                  ? "Congratulazioni!"
+                                  : "Hai Sbagliato",
+                          font: {
+                              size: "20",
+                          },
+                      },
+                  ],
+              },
+          },
+      },
+  });
 }
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////
+
 
 
 function stampaTesto(percentuale) {
@@ -324,13 +384,14 @@ function stampaTesto(percentuale) {
   }
 }
 
-function updateGrafico(percentuale) {
+/*function updateGrafico(percentuale) {
   const coloreSfondo =
     percentuale > 100
       ? "#00ffff"
       : `linear-gradient(90deg, #00ffff ${percentuale}%, #d20094 ${percentuale}%)`;
   graficoElement.style.background = coloreSfondo;
-}
+}*/
+
 
 
   function shuffleArray(array) {
@@ -346,27 +407,7 @@ function updateGrafico(percentuale) {
 
  
 
-  ///// BARRA1 prova
+  
 
- /* let widthValue = 0;
-  let elem = document.getElementById("progress");
-  let percentualeCorrette = (correctAnswers / questions.length) * 100;
-  let widthAnim = widthValue;
-
-  function move() {
-    let id = setInterval(frame, 10);
-    let widthIncrement = 10;
-    widthIncrement = correctAnswers;
-    widthValue = widthAnim + widthIncrement;
-    function frame() {
-      
-        widthAnim++;
-        elem.style.width = widthAnim + "%";
-        elem.innerHTML = widthAnim * 1 + "%";
-      
-    }
-  }
-
-move(); */
 
 
