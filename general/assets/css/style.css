@@ -19,13 +19,13 @@ header img {
 .main {
   text-align: center;
   margin: 0 auto;
- /* width: 34vw;*/
+  /* width: 34vw;*/
 }
 
 .container {
   margin: 0 auto;
 
-  width: 60vw;
+  width: 80vw;
 }
 
 h1 {
@@ -56,6 +56,7 @@ label {
   font-family: "Outfit", sans-serif;
   font-weight: 800;
   color: #0c113b;
+  cursor: pointer;
 }
 
 /*MAIN PAGINA 1*/
@@ -126,67 +127,118 @@ input[type="checkbox"]:checked + label::before {
   line-height: 15px; 
 }
 
-/* MAIN */
+/* MAIN PAGINA 2 */
 
-/* MAIN PAGINA 4 */
-
-.title {
+#domanda {
   font-size: 40px;
-  font-weight: 600;
+  margin: 80px;
 }
 
-
-.rating {
-  font-size: 0;
-  margin: 30px 0px 70px 0px;
+#results {
+  display: none;
 }
 
-.star {
-  display: inline-block;
-  margin: 0 5px;
-  cursor: pointer;
+#risposte {
+  margin: 30px 150px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.star i {
-  font-size: 40px; 
-  color: #1e3050; 
+#conteggio {
+  margin-top: 115px;
+  font-family: "Outfit", sans-serif;
 }
 
-.star.clicked i,
-.star:hover i {
-  color: #00ffff; 
-}
-
-.pg4 {
-  font-size: 20px;
-  width: 35vw;
-  margin: 0 auto;
-}
-
-
-.comment {
-  margin: 30px;
-  height: 20px;
-  width: 630px;
+.btnQuiz {
+  background-color: rgba(43, 41, 88, 0.6);
   border: none;
-  border-bottom: 1px solid #d20094;
-  outline: none;
-  padding-left: 30px;
-  padding-bottom: 5px; 
-  background-color: transparent;
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px 1px whitesmoke;
+  height: 50px;
+  width: 180px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
   color: #fff;
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
+  flex-basis: calc(50% - 20px);
+  margin: 10px;
 }
 
-
-#moreInfo {
-    margin-top: 20px;
+.btnQuiz:hover {
+  background-color: #d20094;
 }
 
+#results h1 {
+  margin: 0;
+}
+#results p {
+  margin: 0px;
+}
+
+#percentuali {
+  margin: 30px;
+}
+
+.esito,
+.chart-container,
+#descrizioneEsito {
+  color: #fff;
+
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+}
+
+#descrizioneEsito {
+  margin-top: 50px;
+}
+
+.esito {
+  vertical-align: top;
+  margin-top: 45px;
+}
+
+/*pie chart*/
+
+.chart-container {
+  height: 200px;
+  width: 200px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#barraProgresso {
+  width: 200px;
+}
+
+.esito h2 {
+  margin: 0;
+  font-size: 30px; /* Dimensione del testo per Correct/Wrong */
+}
+
+#True h2 {
+  color: #00ffff;
+}
+
+.esito p {
+  margin: 0;
+  font-size: 16px; /* Dimensione del testo per X/Y questions e percentuali */
+}
+
+#progresso {
+  height: 30%;
+}
+
+#rateUs {
+  background-color: transparent;
+  border: 2px solid #fff;
+  box-shadow: none;
+  color: #fff;
+  margin: 50px;
+}
+
+/*TIMER*/
 #timer {
   width: 30%;
-  margin: -5rem 3rem 2rem 40rem;
+  margin: -5rem 6rem 1rem 50rem;
 }
 
 .base-timer {
@@ -219,7 +271,7 @@ input[type="checkbox"]:checked + label::before {
   transition: 1s linear all;
   fill-rule: nonzero;
   stroke: currentColor;
-  color:#00FFFF;
+  color: #00ffff;
 }
 
 .base-timer__label {
@@ -233,63 +285,55 @@ input[type="checkbox"]:checked + label::before {
   font-size: 22px;
 }
 
-/* caselle PAGINA 3 */
+/* MAIN PAGINA 4 */
 
-
-
-
-/* Modifica gli stili nel tuo file style.css */
-
-#risposte {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Divide il container in due colonne */
-  gap: 10px; /* Aggiunge spazi tra le caselle */
-  justify-content: center; /* Centra le caselle orizzontalmente */
+.title {
+  font-size: 40px;
+  font-weight: 600;
 }
 
-#risposta1,
-#risposta2 {
-  margin-bottom: px; /* Aggiunge uno spazio tra le risposte A e B */
+.rating {
+  font-size: 0;
+  margin: 30px 0px 70px 0px;
 }
 
-#risposta3 {
-  
-  margin-top: 20px; /* Aggiunge uno spazio sopra la risposta C */
-}
-
-#risposta4 {
-  margin-top: 20px; /* Aggiunge uno spazio sopra la risposta D */
-}
-
-.btnQuiz {
-  background-color: #1e3050;
-  padding: 20px;
-  margin: 10px;
+.star {
+  display: inline-block;
+  margin: 0 5px;
   cursor: pointer;
+}
+
+.star i {
+  font-size: 40px; 
+  color: #1e3050; 
+}
+
+.star.clicked i,
+.star:hover i {
+  color: #00ffff; 
+}
+
+.pg4 {
+  font-size: 20px;
+  width: 35vw;
+  margin: 0 auto;
+}
+
+.comment {
+  margin: 30px;
+  height: 20px;
+  width: 630px;
   border: none;
-  border-radius: 30px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #d20094;
+  outline: none;
+  padding-left: 30px;
+  padding-bottom: 5px; 
+  background-color: transparent;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
 }
 
-.btnQuiz:hover {
-  background-color: #d20094;
+#moreInfo {
+  margin-top: 20px;
 }
-
-.btnQuiz.active {
-  background-color: #d20094;
-}
-
-.risposta-content {
-  color: #000;
-  font-weight: bold;
-}
-
-a {
-  display: block;
-  position: absolute;
-  bottom: 30px; /* Imposta la distanza dal basso */
-  left: 38%; /* Posiziona nel centro orizzontale */
-  padding: 50px;
-}
-

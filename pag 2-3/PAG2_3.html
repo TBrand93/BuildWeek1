@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pag 2 - 3</title>
+    <title>Quiz</title>
 
     <link rel="stylesheet" href="../general/assets/css/style.css" />
   </head>
@@ -15,47 +15,62 @@
         <img src="../general/assets/img/epicode_logo.png" alt="logo" />
       </header>
 
-      <main>
-      <!--       PAGINA 2   QUIZ       -->
+      <main class="main">
+        <!--       PAGINA 2   QUIZ       -->
 
         <div id="quiz">
+          <!--TEST DINAMICO-->
 
+          <div id="test">
             <!-- TIMER -->
             <div id="timer"></div>
 
-            <!--TEST DINAMICO-->
+            <h1 id="domanda"></h1>
 
+<<<<<<< HEAD
       
+=======
+            <!--risposte-->
+>>>>>>> 0ff4ba93c9b767a1ac76e91d79419f551c4365ed
 
+            <div id="risposte"></div>
             <!-- CONTEGGIO -->
 
             <div id="conteggio"></div>
-
+          </div>
         </div>
 
+        <!--       PAGINA 3    RISULTATI    -->
 
-      <!--       PAGINA 3    RISULTATI    -->
+        <div id="results">
+          <h1 id="risultati">Results</h1>
 
+          <p>The Summary of your answers:</p>
 
-      <div id="results">
+          <h3 id="descrizioneEsito"></h3>
+          <div id="percentuali">
+            <!--% RIPOSTE TRUE-->
 
-      <h1 id="risultati"></h1>
+            <div class="esito" id="True"></div>
 
+            <!--GRAFICO CIRCOLARE -->
 
-    <!--% RIPOSTE TRUE-->
+            <div class="chart-container">
+              <canvas id="progressChart"></canvas>
+            </div>
 
-      <div class="esito" id="True">
+            <!--% RIPOSTE FALSE-->
 
-      </div>
-
-
-
-        <!--GRAFICO PROGRESSIVO-->
-        <div id="grafico">
-
-            <p></p>
-
+            <div class="esito" id="False"></div>
+          </div>
+          <!--BOTTONE PAG 4-->
+          <div id="recensione">
+            <a href="../pag4/PAG4_INDEX.html"
+              ><button type="button" class="btn" id="rateUs">RATE US</button></a
+            >
+          </div>
         </div>
+<<<<<<< HEAD
 
             <!-- CASELLE PAGINA 2 -->
 
@@ -90,11 +105,12 @@
 
 
     </main>
+=======
+      </main>
+>>>>>>> 0ff4ba93c9b767a1ac76e91d79419f551c4365ed
     </div>
 
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/PAG2_3.js"></script>
 
 
