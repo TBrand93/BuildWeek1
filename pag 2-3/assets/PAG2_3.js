@@ -315,9 +315,9 @@ function showResults() {
 
 function stampaTesto(percentuale) {
   if (percentuale >= 60) {
-    esitoTestoElement.innerText = "Passato";
+    esitoTestoElement.innerText = "Congrats! 😎";
   } else {
-    esitoTestoElement.innerText = "Bocciato";
+    esitoTestoElement.innerText = "Oops 😱";
   }
 }
 
