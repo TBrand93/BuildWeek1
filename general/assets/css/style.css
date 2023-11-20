@@ -19,13 +19,13 @@ header img {
 .main {
   text-align: center;
   margin: 0 auto;
- /* width: 34vw;*/
+  /* width: 34vw;*/
 }
 
 .container {
   margin: 0 auto;
 
-  width: 60vw;
+  width: 80vw;
 }
 
 h1 {
@@ -56,11 +56,8 @@ label {
   font-family: "Outfit", sans-serif;
   font-weight: 800;
   color: #0c113b;
+  cursor: pointer;
 }
-
-
-
-
 
 /*MAIN PAGINA 1*/
 
@@ -130,14 +127,10 @@ input[type="checkbox"]:checked + label::before {
   line-height: 15px; /* Altezza del contenitore del carattere */
 }
 
-
-
-
-
 /* MAIN PAGINA 2 */
 
 #domanda {
-  font-size:40px ;
+  font-size: 40px;
   margin: 80px;
 }
 
@@ -149,11 +142,10 @@ input[type="checkbox"]:checked + label::before {
   margin: 30px 150px;
   display: flex;
   flex-wrap: wrap;
-
 }
 
 #conteggio {
-  margin-top: 150px;
+  margin-top: 115px;
   font-family: "Outfit", sans-serif;
 }
 
@@ -163,22 +155,17 @@ input[type="checkbox"]:checked + label::before {
   border-radius: 30px;
   box-shadow: 1px 1px 1px 1px whitesmoke;
   height: 50px;
-  width: 180px; /**/
+  width: 180px;
   font-family: "Outfit", sans-serif;
   font-weight: 800;
   color: #fff;
   flex-basis: calc(50% - 20px);
   margin: 10px;
-  /*????? align center?*/
-  
 }
-
 
 .btnQuiz:hover {
   background-color: #d20094;
 }
-
-
 
 #results h1 {
   margin: 0;
@@ -188,16 +175,34 @@ input[type="checkbox"]:checked + label::before {
 }
 
 #percentuali {
-  margin: 40px;
+  margin: 30px;
 }
 
 .esito,
-#barraProgresso,
-#grafico {
+.chart-container,
+#descrizioneEsito {
   color: #fff;
-  margin-left: 15px;
+
   display: inline-block;
   font-family: "Outfit", sans-serif;
+}
+
+#descrizioneEsito {
+  margin-top: 50px;
+}
+
+.esito {
+  vertical-align: top;
+  margin-top: 45px;
+}
+
+/*pie chart*/
+
+.chart-container {
+  height: 200px;
+  width: 200px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 #barraProgresso {
@@ -209,16 +214,13 @@ input[type="checkbox"]:checked + label::before {
   font-size: 30px; /* Dimensione del testo per Correct/Wrong */
 }
 
+#True h2 {
+  color: #00ffff;
+}
+
 .esito p {
   margin: 0;
   font-size: 16px; /* Dimensione del testo per X/Y questions e percentuali */
-}
-
-#grafico {
-  width: 30%;
-  height: 20px;
-  margin-top: 10px;
-  overflow: hidden; /* Aggiunto overflow: hidden; */
 }
 
 #progresso {
@@ -226,20 +228,17 @@ input[type="checkbox"]:checked + label::before {
 }
 
 #rateUs {
-  background-color:transparent;
+  background-color: transparent;
   border: 2px solid #fff;
   box-shadow: none;
   color: #fff;
+  margin: 50px;
 }
-
-
-
 
 /*TIMER*/
 #timer {
   width: 30%;
   margin: -5rem 6rem 1rem 50rem;
-
 }
 
 .base-timer {
@@ -272,7 +271,7 @@ input[type="checkbox"]:checked + label::before {
   transition: 1s linear all;
   fill-rule: nonzero;
   stroke: currentColor;
-  color:#00FFFF;
+  color: #00ffff;
 }
 
 .base-timer__label {
@@ -286,18 +285,12 @@ input[type="checkbox"]:checked + label::before {
   font-size: 22px;
 }
 
-
-
-
-
-
 /* MAIN PAGINA 4 */
 
 .title {
   font-size: 40px;
   font-weight: 600;
 }
-
 
 .rating {
   font-size: 0;
@@ -326,7 +319,6 @@ input[type="checkbox"]:checked + label::before {
   margin: 0 auto;
 }
 
-
 .comment {
   margin: 30px;
   height: 20px;
@@ -342,30 +334,6 @@ input[type="checkbox"]:checked + label::before {
   font-weight: 300;
 }
 
-
 #moreInfo {
-    margin-top: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/*pie chart*/
-
-.chart-container {
-  width: 80%;
-  max-width: 600px;
-}
-
-.quiz-container {
-  text-align: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }

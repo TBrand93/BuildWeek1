@@ -30,8 +30,6 @@ document.getElementById("timer").innerHTML = `
 </div>
 `;
 
-// startTimer();
-
 function onTimesUp() {
   clearInterval(timerInterval);
   checkAnswer(false);
@@ -95,7 +93,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a letiable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a letiable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -192,12 +190,9 @@ const conteggioElement = document.getElementById("conteggio");
 const risultatoElement = document.getElementById("risultato");
 const esitoTrueElement = document.getElementById("True");
 const esitoTestoElement = document.getElementById("descrizioneEsito");
-const graficoElement = document.getElementById("grafico");
+const graficoElement = document.getElementById("progressChart");
 const esitoFalseElement = document.getElementById("False");
 const btnQuizElements = document.querySelectorAll(".btnQuiz");
-const progressBarFill = document.getElementById('progress');
-
-
 
 /* DI SEGUITO LE FUNZIONI IN ORDINE */
 
@@ -240,40 +235,6 @@ function displayQuestion(question) {
   updateConteggio();
 }
 
-/*function displayQuestion(question) {
-  domandaElement.textContent = question.question;
-
-  const allAnswers = [...question.incorrect_answers, question.correct_answer];
-  const shuffledAnswers = shuffleArray(allAnswers);
-
-  btnQuizElements.forEach((btn, index) => {
-    btn.textContent = shuffledAnswers[index];
-    btn.onclick = () =>
-      checkAnswer(shuffledAnswers[index] === question.correct_answer);
-  });
-
-  
-}*/
-
-/*risposteElement.innerText = '';
-
-  shuffledAnswers.forEach((answer) => {
-    const button = document.createElement('button');
-    button.classList.add('btnQuiz');
-    button.innerText = answer;
-    button.onclick = () =>
-      checkAnswer(answer === question.correct_answer);
-    risposteElement.appendChild(button);
-  });
-*/
-
-//btnQuizElements.forEach((btn, index) => {
-// btn.textContent = shuffledAnswers[index];
-
-//updateConteggio();
-
-//}
-
 function checkAnswer(isCorrect) {
   if (isCorrect) {
     correctAnswers++;
@@ -308,73 +269,49 @@ function showResults() {
     2
   )}%</h2><br><p>${domandeSbagliate}/${questions.length} questions</p>`;
 
-  
-// Aggiungi il testo dell'esito
-stampaTesto(percentualeCorrette);
+  // Aggiungi il testo dell'esito
+  stampaTesto(percentualeCorrette);
 
-// Aggiungi la barra di progresso
-//updateGrafico(percentualeCorrette);
+  /////////PIE CHART//////
 
-
-
-
-
-/////////PIE CHART//////
-
-// Funzione per calcolare la percentuale di risposte giuste
-
-
+  // Funzione per calcolare la percentuale di risposte giuste
 
   const ctx = document.getElementById("progressChart");
   const progressChart = new Chart(ctx, {
-      type: "doughnut",
-      data: {
-          //labels: ["Giuste", "Sbagliate"],
-          datasets: [
-              {
-                  data: [percentualeCorrette, percentualeSbagliate],
-                  backgroundColor: ["#00FFFF", "#D20094"],
+    type: "doughnut",
+    data: {
+      datasets: [
+        {
+          data: [percentualeCorrette, percentualeSbagliate],
+          backgroundColor: ["#00FFFF", "#D20094"],
+        },
+      ],
+    },
+    options: {
+      cutoutPercentage: 80,
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: {
+        display: false,
+      },
+      plugins: {
+        doughnutlabel: {
+          labels: [
+            {
+              text:
+                percentualeCorrette >= 60
+                  ? "Congratulazioni!"
+                  : "Hai Sbagliato",
+              font: {
+                size: "20",
               },
+            },
           ],
+        },
       },
-      options: {
-          cutoutPercentage: 80,
-          responsive: true,
-          maintainAspectRatio: false,
-          legend: {
-              display: false,
-          },
-          plugins: {
-              doughnutlabel: {
-                  labels: [
-                      {
-                          text:
-                              percentualeCorrette >= 60
-                                  ? "Congratulazioni!"
-                                  : "Hai Sbagliato",
-                          font: {
-                              size: "20",
-                          },
-                      },
-                  ],
-              },
-          },
-      },
+    },
   });
 }
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////////////////
-
-
 
 function stampaTesto(percentuale) {
   if (percentuale >= 60) {
@@ -384,30 +321,13 @@ function stampaTesto(percentuale) {
   }
 }
 
-/*function updateGrafico(percentuale) {
-  const coloreSfondo =
-    percentuale > 100
-      ? "#00ffff"
-      : `linear-gradient(90deg, #00ffff ${percentuale}%, #d20094 ${percentuale}%)`;
-  graficoElement.style.background = coloreSfondo;
-}*/
-
-
-
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+  return array;
+}
 
-  // Inizia il quiz quando la pagina si carica
-  window.onload = startQuiz;
-
- 
-
-  
-
-
-
+// Inizia il quiz quando la pagina si carica
+window.onload = startQuiz;

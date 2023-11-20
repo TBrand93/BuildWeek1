@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pag 2 - 3</title>
+    <title>Quiz</title>
 
     <link rel="stylesheet" href="../general/assets/css/style.css" />
   </head>
@@ -16,94 +16,58 @@
       </header>
 
       <main class="main">
-      <!--       PAGINA 2   QUIZ       -->
+        <!--       PAGINA 2   QUIZ       -->
 
         <div id="quiz">
+          <!--TEST DINAMICO-->
 
-            
-
-            <!--TEST DINAMICO-->
-
-            <div id="test">
-
-              <!-- TIMER -->
+          <div id="test">
+            <!-- TIMER -->
             <div id="timer"></div>
 
-                <h1 id="domanda"></h1>
+            <h1 id="domanda"></h1>
 
-                <!--risposte-->
+            <!--risposte-->
 
-                <div id="risposte">
-                    <!--<button type="submit" class="btnQuiz" ></button>
-                    <button type="submit" class="btnQuiz" button>
-                    <button type="submit" class="btnQuiz" class="btnFalse"></button>
-                    <button type="submit" class="btnQuiz" class="btnFalse"></button>
-                    -->
-                </div>
-                <!-- CONTEGGIO -->
+            <div id="risposte"></div>
+            <!-- CONTEGGIO -->
 
             <div id="conteggio"></div>
-
-            </div>
-
-            
-
+          </div>
         </div>
 
+        <!--       PAGINA 3    RISULTATI    -->
 
-      <!--       PAGINA 3    RISULTATI    -->
+        <div id="results">
+          <h1 id="risultati">Results</h1>
 
+          <p>The Summary of your answers:</p>
 
-      <div id="results">
-        <h1 id="risultati">Results</h1>
-
-        <p>The Summary of your answers:</p>
-
-        <div id="percentuali">
-          <!--% RIPOSTE TRUE-->
-
-          <div class="esito" id="True"></div>
-        <!--GRAFICO LINEARE -->
-          <div id="barraProgresso">
           <h3 id="descrizioneEsito"></h3>
-          
-        <!--GRAFICO CIRCOLARE -->
-          <div class="quiz-container">
-            
-            <div id="quiz"></div>
+          <div id="percentuali">
+            <!--% RIPOSTE TRUE-->
 
+            <div class="esito" id="True"></div>
+
+            <!--GRAFICO CIRCOLARE -->
 
             <div class="chart-container">
               <canvas id="progressChart"></canvas>
+            </div>
+
+            <!--% RIPOSTE FALSE-->
+
+            <div class="esito" id="False"></div>
           </div>
-            
-        </div>
-        
-          <div id="grafico">
-            
-            <div id="progresso"></div>
+          <!--BOTTONE PAG 4-->
+          <div id="recensione">
+            <a href="../pag4/PAG4_INDEX.html"
+              ><button type="button" class="btn" id="rateUs">RATE US</button></a
+            >
           </div>
         </div>
-        
-
-          <!--% RIPOSTE FALSE-->
-
-          <div class="esito" id="False"></div>
-        </div>
-        <!--BOTTONE PAG 4-->
-       <div id="recensione">
-         
-
-         <a href="../pag4/PAG4_INDEX.html"><button type="button" class="btn" id="rateUs">RATE US</button></a>
-
-       </div>
-        </div>
-
-
-    </main>
+      </main>
     </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/PAG2_3.js"></script>
